@@ -18,7 +18,7 @@
 		.car{
 			width: 200px;
 			height: 100px;
-			background: url('images/dudeRT.gif') no-repeat center;
+			/* background: url('images/dudeRT.gif') no-repeat center; */
 			background-size: cover;
 			position: absolute;
 			transition: all 0.1s;
@@ -35,7 +35,9 @@
     </div>
 
     <div class="container">
-        <div class="car"></div>
+        <div class="car">
+            <img src="images/dudeRT.gif" width="300px">
+        </div>
     </div>
     <script type="text/javascript">
         // THE PLAYER
@@ -57,10 +59,12 @@
             else if(e.keyCode == '37') {
                 // MOVE LEFT
                 mov_car("left");
+                document.querySelector(".car").innerHTML=`<img src="images/dudeLF.gif" width="300px">`;
             }
             else if(e.keyCode == '39') {
                 // MOVE RIGHT
-                mov_car("right");
+                mov_car("right"); 
+                document.querySelector(".car").innerHTML=`<img src="images/dudeRT.gif" width="300px">`;
             }
         }
         function mov_car(a) {
